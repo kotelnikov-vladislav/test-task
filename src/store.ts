@@ -1,6 +1,10 @@
 import { legacy_createStore as createStore } from 'redux'
 import { Action, State, UserDetailedInfo } from './types';
 
+if (!localStorage.getItem('users')) {
+    localStorage.setItem('users', JSON.stringify([]));
+}
+
 const defaultState: State = {
     loginSelectedUser: 'github',
     isOpenUserDetails: false,
