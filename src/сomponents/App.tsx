@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { State } from '../types';
 import Users from './Users';
 import Search from './Search';
-import { div } from '../utils';
 import UserDetails from './UserDetails';
 import { MAX_SHOW_USER } from '../constants';
 
@@ -54,7 +53,7 @@ const App = () => {
             </Container>
             <Container maxWidth='md'>
                 <Pagination
-                    count={div(countFoundUsers, MAX_SHOW_USER)}
+                    count={(countFoundUsers - countFoundUsers % MAX_SHOW_USER) / MAX_SHOW_USER}
                     size='large'
                     onChange={onChangePagination}
                     sx={{
