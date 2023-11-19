@@ -10,7 +10,7 @@ import { MAX_SHOW_USER } from '../constants';
 
 
 const App = () => {
-    const [page, setPage] = useState<number>(1);
+    const [page, setPage] = useState(1);
 
     const foundUsers = useSelector((state: State) => state.foundUsers);
     const countFoundUsers = foundUsers.length;

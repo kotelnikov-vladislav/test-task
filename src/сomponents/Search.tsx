@@ -6,7 +6,7 @@ import { User } from '../api';
 import { State } from '../types';
 
 const Search = () => {
-    const [enteredLogin, setEnteredLogin] = useState<string>('');
+    const [enteredLogin, setEnteredLogin] = useState('');
     const dispatch = useDispatch();
     const countFoundUsers: number = useSelector((state: State) => state.foundUsers.length);
 
