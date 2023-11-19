@@ -12,9 +12,9 @@ import { MAX_SHOW_USER } from '../constants';
 const App = () => {
     const [page, setPage] = useState<number>(1);
 
-    let foundUsers = useSelector((state: State) => state.foundUsers);
-    let countFoundUsers = foundUsers.length;
-    foundUsers = foundUsers.slice(MAX_SHOW_USER * page - MAX_SHOW_USER, MAX_SHOW_USER * page);
+    const foundUsers = useSelector((state: State) => state.foundUsers);
+    const countFoundUsers = foundUsers.length;
+    const showFoundUsers = foundUsers.slice(MAX_SHOW_USER * page - MAX_SHOW_USER, MAX_SHOW_USER * page);
 
     const savedUsers = useSelector((state: State) => state.savedUsers);
 
@@ -45,7 +45,7 @@ const App = () => {
                             <Typography variant='h2' fontSize='32px' mb={1}>
                                 Найденные пользователи
                             </Typography>
-                            <Users users={foundUsers} />
+                            <Users users={showFoundUsers} />
                         </div>
                     </Stack>
 
