@@ -13,7 +13,6 @@ const App = () => {
     const [page, setPage] = useState<number>(1);
 
     let foundUsers = useSelector((state: State) => state.foundUsers);
-    console.log(foundUsers)
     let countFoundUsers = foundUsers.length;
     foundUsers = foundUsers.slice(MAX_SHOW_USER * page - MAX_SHOW_USER, MAX_SHOW_USER * page);
 
